@@ -1,0 +1,1 @@
+const corr={lat:30.041395126095086,lng:31.209324147137483},map=new google.maps.Map(document.querySelector(".contact__map"),{zoom:18,center:corr,disableDefaultUI:!0}),marker=new google.maps.Marker({position:corr,map:map,title:"Mo Courses"});
