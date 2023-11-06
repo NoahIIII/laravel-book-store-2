@@ -85,6 +85,17 @@ class BookController extends Controller
     public function GetBooksCount(){
         return Book::count();
     }
+    public function HandleStock($book_id,$quantity){
+        $book = Book::where('id',$book_id)->first();
+
+        $data['stock']= ($book['stock'] - $quantity);
+
+        if($data['stock']<0){
+            return redirect()->back()->with('warning','we do not have that quantity');
+        }
+
+        return Book::where('id',$book_id)->update($data);
+    }
 
 
 }
