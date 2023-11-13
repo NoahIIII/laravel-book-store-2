@@ -32,6 +32,9 @@
             </tr>
           </thead>
           <tbody>
+            @php
+                $total = 0;
+            @endphp
             @foreach ( $books as $book)
 
             <tr>
@@ -42,15 +45,21 @@
 
                 </td>
                 <td>{{ $book->price }} جنيه</td>
+                @php
+
+                    # code...
+                    $total = $total + $book->price;
+
+                @endphp
             </tr>
             @endforeach
             {{--  --}}
               <th>المجموع:</th>
-              <td class="fw-bolder">{{ $books[0]->total }} جنيه</td>
+              <td class="fw-bolder">{{ $total }} جنيه</td>
             </tr>
             <tr>
               <th>الإجمالي:</th>
-              <td class="fw-bold">{{ $books[0]->total }} جنيه</td>
+              <td class="fw-bold">{{ $total }} جنيه</td>
             </tr>
           </tbody>
         </table>

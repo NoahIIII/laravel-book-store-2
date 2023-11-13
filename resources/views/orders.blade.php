@@ -19,7 +19,7 @@
             <div class="profile__right">
                 <div class="profile__user mb-3 d-flex gap-3 align-items-center">
                     <div class="profile__user-img rounded-circle overflow-hidden">
-                        <img class="w-100" src="{{ asset('front') }}/assets/images/user.png" alt="">
+                        <img class="w-100" src="{{ asset('front') }}/assets/images/user.png" alt="image">
                     </div>
                     <div class="profile__user-name">moamenyt</div>
                 </div>

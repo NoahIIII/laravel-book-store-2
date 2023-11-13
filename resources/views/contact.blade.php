@@ -126,7 +126,7 @@
                 </form>
             </div>
             <div class="contact__side w-50 text-center">
-                <img class="w-100" src="{{ asset('front') }}/assets/images/contact-1.png" alt="">
+                <img class="w-100" src="{{ asset('front') }}/assets/images/contact-1.png" alt="image">
             </div>
         </section>
 

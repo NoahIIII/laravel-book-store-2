@@ -3,7 +3,7 @@
         <div class="section-container row">
             <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
                 <div class="footer__logo">
-                    <img class="w-100" src="{{ asset('front') }}/assets/images/logo.png" alt="">
+                    <img class="w-100" src="{{ asset('front') }}/assets/images/logo.png" alt="image">
                 </div>
                 <p class="my-3 text-gray">شركتنا هي أكبر شركة متخصصة لبيع الاحذية أونلاين وتوصيلها حتي المنزل.</p>
                 <div class="footer__social d-flex gap-3">

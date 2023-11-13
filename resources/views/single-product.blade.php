@@ -19,9 +19,9 @@
         <section class="section-container my-5 pt-5 d-md-flex gap-5">
             <div class="single-product__img w-100" id="main-img">
                 @if(file_exists(public_path('storage/'.$book->image)))
-                <img src="{{ asset('storage/'.$book->image) }}" alt="">
+                <img src="{{ asset('storage/'.$book->image) }}" alt="image">
                 @else
-                <img src="{{ asset($book->image) }}" alt="">
+                <img src="{{ asset($book->image) }}" alt="image">
                 @endif
             </div>
             <div class="single-product__details w-100 d-flex flex-column justify-content-between">
@@ -159,7 +159,7 @@
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="features__item d-flex align-items-center gap-2">
                         <div class="features__img">
-                            <img class="w-100" src="{{ asset('front') }}/assets/images/feature-1.png" alt="">
+                            <img class="w-100" src="{{ asset('front') }}/assets/images/feature-1.png" alt="image">
                         </div>
                         <div>
                             <h6 class="features__item-title m-0">شحن سريع</h6>
@@ -170,7 +170,7 @@
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="features__item d-flex align-items-center gap-2">
                         <div class="features__img">
-                            <img class="w-100" src="{{ asset('front') }}/assets/images/feature-2.png" alt="">
+                            <img class="w-100" src="{{ asset('front') }}/assets/images/feature-2.png" alt="image">
                         </div>
                         <div>
                             <h6 class="features__item-title m-0">ضمان الجودة</h6>
@@ -181,7 +181,7 @@
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="features__item d-flex align-items-center gap-2">
                         <div class="features__img">
-                            <img class="w-100" src="{{ asset('front') }}/assets/images/feature-3.png" alt="">
+                            <img class="w-100" src="{{ asset('front') }}/assets/images/feature-3.png" alt="image">
                         </div>
                         <div>
                             <h6 class="features__item-title m-0">دعم فني</h6>
@@ -192,7 +192,7 @@
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="features__item d-flex align-items-center gap-2">
                         <div class="features__img">
-                            <img class="w-100" src="{{ asset('front') }}/assets/images/feature-4.png" alt="">
+                            <img class="w-100" src="{{ asset('front') }}/assets/images/feature-4.png" alt="image">
                         </div>
                         <div>
                             <h6 class="features__item-title m-0">استبدال سهل</h6>
@@ -218,10 +218,11 @@
                             <div class="product__img-cont">
                                 @if(file_exists(public_path('storage/'.$may_book[0]['image'])))
                                 <img class="product__img w-100 h-100 object-fit-cover"
-                                    src="{{ asset('storage/'.$may_book[0]['image']) }}" data-id="white">
+                                    src="{{ asset('storage/'.$may_book[0]['image']) }}" data-id="white" alt="image">
                                     @else
                                     <img class="product__img w-100 h-100 object-fit-cover"
-                                    src="{{ asset($may_book[0]['image']) }}" data-id="white">
+                                    src="{{ asset($may_book[0]['image']) }}" data-id="white" alt="
+                                    image">
                                     @endif
 
                             </div>
@@ -269,10 +270,10 @@
                                 <div class="product__img-cont">
                                     @if(file_exists(public_path('storage/'.$book->image)))
                                     <img class="product__img w-100 h-100 object-fit-cover" src="{{ asset('storage/'.$book->image) }}"
-                                        data-id="white">
+                                        data-id="white" alt="image">
                                         @else
                                     <img class="product__img w-100 h-100 object-fit-cover" src="{{ asset($book->image) }}"
-                                        data-id="white">
+                                        data-id="white" alt="image">
                                         @endif
                                 </div>
                             </a>
@@ -315,7 +316,7 @@
             <div class="comments__slider owl-carousel owl-theme">
                 <div class="comments__item">
                     <div class="comments__icon">
-                        <img class="w-100" src="{{ asset('front') }}/assets/images/quote.png" alt="">
+                        <img class="w-100" src="{{ asset('front') }}/assets/images/quote.png" alt="image">
                     </div>
                     <div class="comments__text mb-3">
                         الكتاب جميل جدا

@@ -21,7 +21,7 @@
 
       <section class="section-container d-flex align-items-center py-4">
         <div class="about__img text-center w-50">
-          <img class="w-100" src="{{ asset('front')}}/assets/images/logo.png" alt="" />
+          <img class="w-100" src="{{ asset('front')}}/assets/images/logo.png" alt="image" />
         </div>
         <div class="w-50">
             <h4 class="fw-bolder mb-4">من هي شركة Coding arabic</h4>
@@ -65,7 +65,7 @@
         </p>
         </div>
         <div class="about__img text-end w-50">
-          <img class="w-100" src="{{ asset('front')}}/assets/images/about-2.png" alt="" />
+          <img class="w-100" src="{{ asset('front')}}/assets/images/about-2.png" alt="image" />
         </div>
       </section>
 
@@ -77,7 +77,7 @@
           <div class="col-md-6 col-lg-3">
               <div class="features__item d-flex align-items-center gap-2">
               <div class="features__img">
-                <img class="w-100" src="{{ asset('front')}}/assets/images/feature-1.png" alt="" />
+                <img class="w-100" src="{{ asset('front')}}/assets/images/feature-1.png" alt="image" />
             </div>
               <div>
                 <h6 class="features__item-title m-0">شحن سريع</h6>
@@ -90,7 +90,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="features__item d-flex align-items-center gap-2">
               <div class="features__img">
-                <img class="w-100" src="{{ asset('front')}}/assets/images/feature-2.png" alt="" />
+                <img class="w-100" src="{{ asset('front')}}/assets/images/feature-2.png" alt="image" />
             </div>
               <div>
                   <h6 class="features__item-title m-0">ضمان الجودة</h6>
@@ -103,7 +103,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="features__item d-flex align-items-center gap-2">
                 <div class="features__img">
-                    <img class="w-100" src="{{ asset('front')}}/assets/images/feature-3.png" alt="" />
+                    <img class="w-100" src="{{ asset('front')}}/assets/images/feature-3.png" alt="image" />
                 </div>
                 <div>
                     <h6 class="features__item-title m-0">دعم فني</h6>
@@ -116,7 +116,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="features__item d-flex align-items-center gap-2">
                 <div class="features__img">
-                    <img class="w-100" src="{{ asset('front')}}/assets/images/feature-4.png" alt="" />
+                    <img class="w-100" src="{{ asset('front')}}/assets/images/feature-4.png" alt="image" />
                 </div>
                 <div>
                     <h6 class="features__item-title m-0">استبدال سهل</h6>

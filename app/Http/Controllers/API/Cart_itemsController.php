@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Models\Book;
+use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Cart_items;
 use Illuminate\Http\Request;
@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class Cart_itemsController extends Controller
 {
-
+    //
     function GetBooksInCart(){
-        if(Auth::check()){
+        if(Auth::guard('sanctum')->check()){
 
-            $userId = Auth::user()->id;
+            $userId = Auth::guard('sanctum')->user()->id;
 
             $books = Cart_items::whereHas('cart', function($query) use ($userId) {
                 $query->where('user_id', $userId);
@@ -28,9 +28,9 @@ class Cart_itemsController extends Controller
         }
     }
     function ItemsCount(){
-        if(Auth::check()){
+        if(Auth::guard('sanctum')->check()){
 
-            $userId = Auth::user()->id;
+            $userId = Auth::guard('sanctum')->user()->id;
 
             $productCount = Cart_items::whereHas('cart', function($query) use ($userId) {
                     $query->where('user_id', $userId);
@@ -53,7 +53,6 @@ class Cart_itemsController extends Controller
         if($cart[0]['total']==0){
             Cart::where('id',$cart_id)->delete();
         }
-        return redirect()->back()->with('success','تم حذف الكتاب من السلة');
+        return response()->json(['success'=>'تم حذف الكتاب من السلة']);
     }
-
 }

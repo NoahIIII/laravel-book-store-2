@@ -10,9 +10,9 @@
                 <div class="hero__item">
                     @foreach ( $banners as $banner )
                     @if(file_exists(public_path('storage/'.$banner->image)))
-                    <img class="hero__img" src="{{ asset('storage/'.$banner->image)}}" alt="" style="width: 100%; height: auto; max-width: 100vw; max-height: 50vh;">
+                    <img class="hero__img" src="{{ asset('storage/'.$banner->image)}}" alt="image" style="width: 100%; height: auto; max-width: 100vw; max-height: 50vh;">
                     @else
-                    <img class="hero__img" src="{{ asset($banner->image)}}" alt="" style="width: 100%; height: auto; max-width: 100vw; max-height: 50vh;">
+                    <img class="hero__img" src="{{ asset($banner->image)}}" alt="image" style="width: 100%; height: auto; max-width: 100vw; max-height: 50vh;">
                     @endif
                 </div>
                 @endforeach

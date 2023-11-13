@@ -47,9 +47,9 @@
                 </td>
                 <td class="d-block d-md-table-cell favourites__img">
                     @if(file_exists(public_path('storage/'.$book[0]->image)))
-                    <img src="{{ asset('storage/'.$book[0]->image) }}" alt="" />
+                    <img src="{{ asset('storage/'.$book[0]->image) }}" alt="image" />
                     @else
-                    <img src="{{ asset($book[0]->image) }}" alt="" />
+                    <img src="{{ asset($book[0]->image) }}" alt="image" />
                     @endif
                 </td>
                 <td class="d-block d-md-table-cell">

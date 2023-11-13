@@ -22,7 +22,7 @@
     <section class="section-container profile my-5 py-5">
       <div class="text-center mb-5">
         <div class="success-gif m-auto">
-          <img class="w-100" src="{{ asset('front')}}/assets/images/success.gif" alt="" />
+          <img class="w-100" src="{{ asset('front')}}/assets/images/success.gif" alt="image" />
         </div>
         <h4 class="mb-4">جاري تجهيز طلبك الآن</h4>
         <p class="mb-1">

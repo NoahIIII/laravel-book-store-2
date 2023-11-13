@@ -45,7 +45,7 @@
                     </div>
                     <div class="nav__logo">
                         <a href="{{ route('home') }}">
-                            <img class="h-100" src="{{ asset('front') }}/assets/images/logo.png" alt="">
+                            <img class="h-100" src="{{ asset('front') }}/assets/images/logo.png" alt="image">
                         </a>
                     </div>
                     <div class="nav__search w-100">
@@ -164,7 +164,7 @@
                 </div>
                 <div class="nav__categories-body offcanvas-body pt-0">
                     <div class="nav__side-logo mb-2">
-                        <img class="w-100" src="{{ asset('front') }}/assets/images/logo.png" alt="">
+                        <img class="w-100" src="{{ asset('front') }}/assets/images/logo.png" alt="image">
                     </div>
                     <ul class="nav__list list-unstyled">
                         {{-- for --}}
@@ -219,7 +219,7 @@
                                     </div>
                                     <div class="cart-products__img">
                                         <img class="w-100" src="{{ asset($book->image) }}"
-                                        alt="">
+                                        alt="image">
                                     </div>
                                 </li>
                                 @endforeach
