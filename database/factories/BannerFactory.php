@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,8 +19,22 @@ class BannerFactory extends Factory
     {
         return [
             //
-            'status'=>'0',
-            'image'=>$this->faker->imageUrl(),
+            'status'=>'1',
+            'image'=>$this->GetBannerImage(),
         ];
+    }
+    function GetBannerImage(){
+        $accessKey = '7DbzzwnTRL3Ad8GgjHH6RkmyKTktFso5UdLBZTTLI4I';
+        $searchQuery = 'e-commerce banner'; // You can customize the search query if needed
+
+        $url = "https://api.unsplash.com/photos/random?client_id={$accessKey}&query={$searchQuery}&orientation=landscape";
+
+        $client = new Client();
+        $response = $client->get($url);
+
+        $data = json_decode($response->getBody(), true);
+        $imageUrl = $data['urls']['regular'];
+
+        return $imageUrl;
     }
 }
