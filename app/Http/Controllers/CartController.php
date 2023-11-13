@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Cart;
 use App\Models\Cart_items;
 use Illuminate\Http\Request;
@@ -18,11 +19,14 @@ class CartController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->with('warning', 'الكتاب غير متاح');
         }
+        $handle_stock= new BookController();
         $data['user_id'] = Auth::user()->id;
         $price = \App\Models\Book::where('id', $id)->get('price_after_discount');
         $item_data['quantity'] = $request->quantity;
+        $handle_stock->HandleStock($id,$item_data['quantity']);
         $item_data['price'] = $price[0]['price_after_discount'] * $item_data['quantity'];
         $data['total'] = $item_data['quantity'] * $item_data['price'];
+
         $item_data['book_id'] = $id;
         if (!$this->HandleCart()) {
             $cart = Cart::create($data);

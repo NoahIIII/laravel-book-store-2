@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     //
     function index(){
-        $books=Book::OrderBy('discount','desc')->take(15)->get();
+        $books=Book::where('status',1)->OrderBy('discount','desc')->take(15)->get();
         $topbooks = Book::orderBy('best_seller', 'desc')->take(15)->get();
         $newbooks = Book::orderBy('created_at','desc')->take(15)->get();
         $banner= new BannerController();
