@@ -13,9 +13,12 @@
         "laravel/sanctum": "^3.3",
         "laravel/scout": "^10.5",
         "laravel/tinker": "^2.8",
+        "nafezly/payments": "dev-master",
+        "vonage/client": "^4.0",
         "yoeunes/toastr": "^2.3"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.9",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",

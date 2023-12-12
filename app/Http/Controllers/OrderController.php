@@ -26,7 +26,7 @@ class OrderController extends Controller
         $invoice->store($request, $order_id, $total);
         $cart = new CartController();
         $cart->destroy();
-        return redirect()->to(route('order_details',$order_id))->with('success', 'تم اتمام الطلب بنجاح');
+        return redirect()->to(route('checkout',$data));
     }
     function GetOrderData()
     {

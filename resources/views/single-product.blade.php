@@ -99,7 +99,7 @@
             <div class="tab-content pt-4" id="nav-tabContent">
                 <div class="tab-pane show active" id="nav-description" role="tabpanel"
                     aria-labelledby="single-product__describtion-tab" tabindex="0">
-                    Modern Full-Stack Development
+                    {{ $book->description }}
                 </div>
                 <div class="questions tab-pane" id="single-product__questions" role="tabpanel"
                     aria-labelledby="single-product__questions-tab" tabindex="0">

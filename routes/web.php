@@ -9,13 +9,16 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Order_itemsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
-use GuzzleHttp\Middleware;
+use App\Http\Controllers\PaymobController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SMSController;
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Http\Controllers\PasswordController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -60,7 +63,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('profile',[UserController::class,'profile'])->name('profile');
     Route::get('orders',[OrderController::class,'index'])->name('orders');
     Route::put('edituserdata',[UserController::class,'edit'])->name('edit_user');
-    Route::put('/user/password', [PasswordController::class, 'update'])->name('password.update');
+    // Route::put('/user/password', [PasswordController::class, 'update'])->name('password.update');
     Route::post('favorite/{id}',[WishlistController::class,'store'])->name('add.favorite');
     Route::post('cart/{id}',[CartController::class,'Add'])->name('add.cart');
     Route::delete('favorite/delete/{id}',[WishlistController::class,'destroy'])->name('delete.favorite');
@@ -113,13 +116,21 @@ Route::group(['middleware'=>'admin'],function(){
     Route::put('banner/edit/{banner_id}',[BannerController::class,'edit'])->name('banner.edit');
 
 });
-// routes/web.php
 
 
-// Route::middleware(['auth'])->group(function () {
-//     // Route::view('/user/password', 'auth.password');
-//     Route::put('/user/password', [PasswordController::class, 'update'])->name('password.update');
-// });
+//Paymob Routes
+Route::post('/credit', [PaymentController::class, 'payWithPaymob'])->name('pay'); // this route send all functions data to paymob
+Route::get('/callback', [PaymentController::class, 'verifyWithPaymob'])->name('callback'); // this route get all reponse data to paymob
+Route::get('/test',function(){
+    return view('credit');
+});
+
+Route::post('/verify', [SMSController::class,'verify'])->name('verify');
+Route::get('request-verify',function(){
+    return view('auth.verifyphone');
+})->name('request.verify');
+
+
 
 // users =>
 // books => ID , name , price , author , description , category_id , image , stock , number of pages , code , discount , price_after_discount,best_seller

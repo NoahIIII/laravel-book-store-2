@@ -86,11 +86,6 @@
                                 <i class="fa-solid fa-envelope"></i>
                             </span>
                         </div>
-                        <div>
-                        <input type="text" name="phone" class="form-control p-3" placeholder="رقم الهاتف"
-           aria-label="Phone" aria-describedby="basic-addon1" />
-    <span class="input-group-text login__input-icon" id="basic-addon1">
-    </div>
                         <div class="input-group rounded-1 mb-3">
                             <input type="password" name="password" class="form-control p-3" placeholder="كلمة السر"
                                 aria-label="Password" aria-describedby="basic-addon1" />

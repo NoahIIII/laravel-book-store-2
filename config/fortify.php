@@ -146,10 +146,8 @@ return [
 
     'features' => [
         \Laravel\Fortify\Features::registration(),
-        Features::resetPasswords([
-            'email' => true,
-            'update' => true,
-        ]),         Features::emailVerification(),
+        Features::resetPasswords(),
+        Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
         // Features::twoFactorAuthentication([

@@ -18,7 +18,7 @@ class OrderFactory extends Factory
     {
         return [
             'user_id'=>'1',
-            'status'=>'confirmed',
+            'status'=>'pending',
             'total'=>$this->faker->numberBetween(100,1000),
             'total_after_discount'=>$this->faker->numberBetween(90,900),
             'created_at'=>now(),

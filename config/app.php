@@ -170,6 +170,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         Laravel\Sanctum\SanctumServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ])->toArray(),
 

@@ -214,7 +214,7 @@
                                         <div>
                                             <p class="cart-products__name m-0 fw-bolder">{{ $book->name }}</p>
                                             <p class="cart-products__price m-0"> x {{ $book->quantity }}</p>
-                                            <p class="cart-products__price m-0"> جنية {{ $book->price }} </p>
+                                            <p class="cart-products__price m-0"> جنية {{ $book->price_after_discount }} </p>
                                         </div>
                                     </div>
                                     <div class="cart-products__img">

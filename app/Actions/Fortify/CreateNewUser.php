@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Http\Controllers\SMSController;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -22,6 +23,10 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'fname' => ['required', 'string', 'max:25','min:3'],
             'lname' => ['required', 'string', 'max:25','min:3'],
+            'phone'=>['required',
+            'string',
+            'max:15',
+            Rule::unique(User::class),],
             'email' => [
                 'required',
                 'string',
@@ -31,13 +36,18 @@ class CreateNewUser implements CreatesNewUsers
             ],
             'password' => ['required','max:24','min:8'],
         ])->validate();
-
+            $sms=new SMSController();
+            $sms->sendVerification($input['phone']);
+            redirect()->to(route('request.verify'));
         return User::create([
             'fname' => $input['fname'],
             'lname' => $input['lname'],
             'username' => $input['fname'].$input['lname'],
+            'phone'=>$input['phone'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
     }
+
+
 }

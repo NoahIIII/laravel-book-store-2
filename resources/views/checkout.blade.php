@@ -18,7 +18,7 @@
         <section class="section-container my-5 py-5 d-lg-flex">
             <div class="checkout__form-cont w-50 px-3 mb-5">
                 <h4>الفاتورة </h4>
-                <form class="checkout__form" action="{{route('order.create')}}" method="post">
+                <form class="checkout__form" action="{{route('pay')}}" method="post">
                     @csrf
                     <div class="d-flex gap-3 mb-3">
                         <div class="w-50">
@@ -56,7 +56,10 @@
                             name="note"id="last-name"></textarea>
                     </div>
                     <button class="primary-button w-100 py-2">تاكيد الطلب</button>
+
+
                 </form>
+
             </div>
             <div class="checkout__order-details-cont w-50 px-3">
                 <h4>طلبك</h4>

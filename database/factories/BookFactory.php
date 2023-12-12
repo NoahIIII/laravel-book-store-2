@@ -25,7 +25,7 @@ class BookFactory extends Factory
             'discount'=>$this->faker->numberBetween(5,25),
             'category_id'=>'1',
             'price_after_discount'=>$this->faker->numberBetween(50,250),
-            'image'=>$this->GetBookImage(),
+            'image'=>$this->faker->imageUrl(),
             'stock'=>$this->faker->numberBetween(1,10),
             'status'=>'1',
             'code'=>rand(10000,20000),
@@ -35,18 +35,5 @@ class BookFactory extends Factory
             'updated_at'=>now(),
     ];
     }
-    function GetBookImage(){
-        $accessKey = '7DbzzwnTRL3Ad8GgjHH6RkmyKTktFso5UdLBZTTLI4I';
-        $searchQuery = 'book cover'; // You can customize the search query if needed
 
-        $url = "https://api.unsplash.com/photos/random?client_id={$accessKey}&query={$searchQuery}&orientation=landscape";
-
-        $client = new Client();
-        $response = $client->get($url);
-
-        $data = json_decode($response->getBody(), true);
-        $imageUrl = $data['urls']['regular'];
-
-        return $imageUrl;
-    }
 }

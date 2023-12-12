@@ -50,8 +50,9 @@ class Cart_itemsController extends Controller
         $data['total']=$cart[0]['total'];
         Cart::where('id',$cart_id)->update($data);
         Cart_items::where('cart_id',$cart_id)->where('book_id',$book_id)->delete();
-        if($cart[0]['total']==0){
-            Cart::where('id',$cart_id)->delete();
+        if($this->ItemsCount()==0){
+            $UserCart= new CartController();
+            $UserCart->destroy();
         }
         return redirect()->back()->with('success','تم حذف الكتاب من السلة');
     }

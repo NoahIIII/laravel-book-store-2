@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\password_reset_token;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use Illuminate\Validation\Rules\Unique;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\Password;
 
+
+use Illuminate\Validation\Rules\Unique;
+use Laravel\Fortify\Contracts\PasswordResetProvider;
 class UserController extends Controller
 {
    function profile()
@@ -94,4 +100,6 @@ class UserController extends Controller
         User::find($user_id)->update($data);
         return redirect()->back()->with('success','the data changed');
     }
+
+
 }

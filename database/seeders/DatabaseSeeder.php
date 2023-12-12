@@ -26,13 +26,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        // User::factory()->count(20)->create();
-        // Book::factory()->count(50)->create();
-        // Contact::factory()->count(50)->create();
-        // Order::factory()->count(50)->create();
-        // Branche::factory()->count(5)->create();
-        // Banner::factory()->count(2)->create();
-        // Category::factory()->count(2)->create();
+        User::factory()->count(20)->create();
+        Category::factory()->count(2)->create();
+        Book::factory()->count(50)->create();
+        Contact::factory()->count(50)->create();
+        Order::factory()->count(50)->create();
+        Branche::factory()->count(5)->create();
+        Banner::factory()->count(2)->create();
 
 
     }
